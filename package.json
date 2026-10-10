@@ -11,5 +11,7 @@
   "devDependencies": {
     "webpack-cli": "^7.2.3",
     "webpack-dev-server": "^6.0.0"
-  }
+  },
+  "scripts": {
+    "build": "webpack"}
 }
