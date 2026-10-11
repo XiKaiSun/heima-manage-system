@@ -14,7 +14,7 @@ axios.interceptors.response.use(null, error => {
         window.localStorage.getItem("token") && window.localStorage.removeItem("token");
         myAlert(false, "身份验证失败")
         setTimeout(() => {
-            location.href = "login"
+            location.href = "./../login/"
         }, 2000)
     }
     throw error

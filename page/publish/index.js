@@ -69,7 +69,6 @@ import "../../utils/alert.js"
 
     auth();
     getChannelList()
-    console.log(123)
     document.querySelector("form").addEventListener("submit", async function (e) {
       try {
         e.preventDefault();
@@ -100,7 +99,7 @@ import "../../utils/alert.js"
           data
         })
         console.log(r)
-        location.href = "../content.html"
+        location.href = "./../content/"
       } catch (e) {
         myAlert(false, e.response.data.message)
       }

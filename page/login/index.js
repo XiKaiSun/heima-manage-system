@@ -19,11 +19,10 @@ document.querySelector(".login-form").addEventListener("submit", function (e) {
         myAlert(true, "登录成功")
         localStorage.setItem("token", JSON.stringify(r.data.data));
         setTimeout(() => {
-            location.href = "content.html"
+            location.href = "./../content/"
         }, 1500)
     }).catch(e => {
         console.dir(e)
         myAlert(false, e.response.data.message)
     })
 })
-console.warn(456)

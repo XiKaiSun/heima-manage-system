@@ -11,6 +11,7 @@ module.exports = (env, argv) => {
         devServer: {
             compress: true,
             port: 9000,
+            hot: true,
         },
         entry: {
             content: './page/content/index.js',   // 如果你的 content 目录下有对应的 js
@@ -25,19 +26,19 @@ module.exports = (env, argv) => {
         plugins: [
             new HtmlWebpackPlugin({
                 template: './page/content/index.html',
-                filename: 'content.html', // 打包输出到 dist/content.html
+                filename: 'content/index.html', // 打包输出到 dist/content.html
                 chunks: ['content'],       // 只自动注入上面 entry 里对应的 content.js
                 useCDN: mode === "production"
             }),
             new HtmlWebpackPlugin({
                 template: './page/login/index.html',
-                filename: 'login.html',   // 打包输出到 dist/login.html
+                filename: 'login/index.html',   // 打包输出到 dist/login.html
                 chunks: ['login'],
                 useCDN: mode === "production"
             }),
             new HtmlWebpackPlugin({
                 template: './page/publish/index.html',
-                filename: 'publish.html', // 打包输出到 dist/publish.html
+                filename: 'publish/index.html', // 打包输出到 dist/publish.html
                 chunks: ['publish'],
                 useCDN: mode === "production"
             }),
@@ -65,7 +66,7 @@ module.exports = (env, argv) => {
     };
     if (config.mode === "development") {
         config.devtool = "inline-source-map";
-    }else{
+    } else {
         config.externals = {
             axios: "axios"
         }
