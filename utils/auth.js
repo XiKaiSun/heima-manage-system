@@ -1,7 +1,7 @@
 import {axios} from "@/request.js"
 function auth() {
     if (!localStorage.getItem("token")) {
-        window.location.href = "login.html"
+        window.location.href = "./../login/"
     }
 }
 
